@@ -48,23 +48,23 @@ type device_stats = {
     restarts : Stdint.uint32;
   }
 
-val restart : string -> (unit, unit) Result.result
-val start : string -> (unit, unit) Result.result
-val stop : string -> (unit, unit) Result.result
+val restart : string -> (unit, [> `EUnix of Unix.error]) Result.result
+val start : string -> (unit, [> `EUnix of Unix.error]) Result.result
+val stop : string -> (unit, [> `EUnix of Unix.error]) Result.result
 
-val set_restart_ms : string -> restart_ms:Stdint.uint32 -> (unit, unit) Result.result
-val set_bittiming : string -> bittiming -> (unit, unit) Result.result
-val set_ctrlmode : string -> ctrlmode -> (unit, unit) Result.result
+val set_restart_ms : string -> restart_ms:Stdint.uint32 -> (unit, [> `EUnix of Unix.error]) Result.result
+val set_bittiming : string -> bittiming -> (unit, [> `EUnix of Unix.error]) Result.result
+val set_ctrlmode : string -> ctrlmode -> (unit, [> `EUnix of Unix.error]) Result.result
 
-val set_bitrate : string -> bitrate:Stdint.uint32 -> (unit, unit) Result.result
-val set_bitrate_samplepoint : string -> bitrate:Stdint.uint32 -> sample_point:Stdint.uint32 -> (unit, unit) Result.result
+val set_bitrate : string -> bitrate:Stdint.uint32 -> (unit, [> `EUnix of Unix.error]) Result.result
+val set_bitrate_samplepoint : string -> bitrate:Stdint.uint32 -> sample_point:Stdint.uint32 -> (unit, [> `EUnix of Unix.error]) Result.result
 
-val get_restart_ms : string -> (Stdint.uint32, unit) Result.result
-val get_bittiming : string -> (bittiming, unit) Result.result
-val get_ctrlmode : string -> (ctrlmode, unit) Result.result
-val get_state : string -> (state, unit) Result.result
-val get_clock : string -> (Stdint.uint32, unit) Result.result
-val get_bittiming_const : string -> (bittiming_const, unit) Result.result
-val get_berr_counter : string -> (berr_counter, unit) Result.result
-val get_device_stats : string -> (device_stats, unit) Result.result
+val get_restart_ms : string -> (Stdint.uint32, [> `EUnix of Unix.error]) Result.result
+val get_bittiming : string -> (bittiming, [> `EUnix of Unix.error]) Result.result
+val get_ctrlmode : string -> (ctrlmode, [> `EUnix of Unix.error]) Result.result
+val get_state : string -> (state, [> `EUnix of Unix.error]) Result.result
+val get_clock : string -> (Stdint.uint32, [> `EUnix of Unix.error]) Result.result
+val get_bittiming_const : string -> (bittiming_const, [> `EUnix of Unix.error]) Result.result
+val get_berr_counter : string -> (berr_counter, [> `EUnix of Unix.error]) Result.result
+val get_device_stats : string -> (device_stats, [> `EUnix of Unix.error]) Result.result
 
