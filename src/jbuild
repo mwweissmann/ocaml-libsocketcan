@@ -4,6 +4,6 @@
  ((name libsocketcan)
   (public_name libsocketcan)
   (synopsis "OCaml bindings to libsocketcan")
-  (c_names
-   (libsocketcan_cstubs))
+  (c_names (libsocketcan_cstubs))
+  (c_library_flags (-lsocketcan))
   (libraries (bytes result stdint))))
