@@ -1,0 +1,20 @@
+opam-version: "1.2"
+maintainer: "Markus W. Weissmann <markus.weissmann@in.tum.de>"
+authors: [
+  "Markus W. Weissmann <markus.weissmann@in.tum.de>"
+]
+license: "MIT"
+homepage: "https://github.com/mwweissmann/ocaml-libsocketcan"
+doc: "https://github.com/mwweissmann/ocaml-libsocketcan"
+dev-repo: "https://github.com/mwweissmann/ocaml-libsocketcan.git"
+bug-reports: "https://github.com/mwweissmann/ocaml-libsocketcan/issues"
+build: [
+  ["jbuilder" "build" "-p" name "-j" jobs]
+]
+build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
+depends: [
+  "base-bytes"
+  "result"
+  "jbuilder" {build}
+]
+

@@ -1,0 +1,9 @@
+(jbuild_version 1)
+
+(library
+ ((name libsocketcan)
+  (public_name libsocketcan)
+  (synopsis "OCaml bindings to libsocketcan")
+  (c_names
+   (libsocketcan_cstubs))
+  (libraries (bytes))))
