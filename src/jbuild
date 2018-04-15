@@ -6,4 +6,4 @@
   (synopsis "OCaml bindings to libsocketcan")
   (c_names
    (libsocketcan_cstubs))
-  (libraries (bytes))))
+  (libraries (bytes result stdint))))
